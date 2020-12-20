@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		link(rel="stylesheet", href="styles.min.css")
+		title Portfolio
+	body
+		header.header
+			.container.header__container
+				ul.header__social.social-list
+					li.social-list__social-item.social-item
+						a(href="#").social-item__link
+							svg.social-item__icon
+								use(xlink:href="images/Social.spriteN.svg#linkedin")
+					li.social-list__social-item.social-item
+						a(href="#").social-item__link
+							svg.social-item__icon
+								use(xlink:href="images/Social.spriteN.svg#vk")
+					li.social-list__social-item.social-item
+						a(href="#").social-item__link
+							svg.social-item__icon
+								use(xlink:href="images/Social.spriteN.svg#email")
+				nav.header__nav.navigation
+					ul.navigation__list
+						li.navigation__item
+							a.navigation__link.link-intro(href="#intro") Intro
+						li.navigation__item
+							a.navigation__link.link-about(href="#about") About
+						li.navigation__item
+							a.navigation__link.link-projects(href="#projects") Projects
+						li.navigation__item
+							a.navigation__link.link-contacts(href="#contacts") Contacts
+		main
+			section.intro
+				.container.intro__container
+					.intro__about
+						h2.intro__greeting Hello!
+						p.intro__representation My name is 
+							span.intro__name Alexander
+						p.intro__description I'm a Juniour front-end developer
+						a(href="#", target="_blank", rel="noopener noreferrer").intro__btn.btn-github.btn 
+							svg.btn__icon
+								use(xlink:href="images/Social.spriteN.svg#github") 
+							| GitHub
+						.intro__btn.btn-cv.btn Download CV
+							a(href="#" download).btn__subbtn.btn__subbtn-left doc
+							a(href="#" download).btn__subbtn.btn__subbtn-right pdf
+					object.intro__img(type="image/svg+xml", data="images/developer-activity-animate.svg") Your browser does not support SVGs
+			section.about
+				.container.about__container
+					h1.section-title.about__title About
+					.about__content
+						.about__skills.skills
+							h2.about__subtitle.skills__title My Skills
+							ul.skills__list
+								li.skills__item JavaScript
+								li.skills__item HTML
+								li.skills__item CSS
+								li.skills__item JQuery
+								li.skills__item Pug
+								li.skills__item SASS/SCSS
+								li.skills__item Bootstrap
+								li.skills__item Gulp
+								li.skills__item Webpack
+						img.about__avatar(src="https://dummyimage.com/600x400/000/fff", alt="avatar")
+						.about__personal-info.personal-info
+							h2.about__subtitle.personal-info__title Personal information
+							ul.personal-info__list
+								li.personal-info__item.personal-info-item
+									span.personal-info-item__title Full name: 
+									|Melnikov Alexander
+								li.personal-info__item.personal-info-item
+									span.personal-info-item__title Date of birth: 
+									|06.08.1998
+								li.personal-info__item.personal-info-item
+									span.personal-info-item__title Place of residence: 
+									|Samara, Russia
+								li.personal-info__item.personal-info-item
+									span.personal-info-item__title Tel: 
+									a(href="tel:+79377956667").personal-info-item__link +79377956667
+								li.personal-info__item.personal-info-item
+									span.personal-info-item__title Email: 
+									a(href="mailto:melnikov38.alex@gmail.com").personal-info-item__link melnikov38.alex@gmail.com
+			section.projects
+				.container.projects__container
+					h1.section-title.projects__title My projects
+					ul.projects__filter-list
+						li.projects__filter-item.filter All
+						li.projects__filter-item.filter Newest
+						li.projects__filter-item.filter Pure JS
+						li.projects__filter-item.filter Mockups
+					ul.projects__list.projects-list
+						li.projects-list__item.project
+							figure.project__previews
+								.project__preview-laptop
+									img.project__img-laptop(src="images/FilmZone.Laptop.png", alt="FilmZone")
+								.project__preview-phone
+									img.project__img-phone(src="images/FilmZone.Phone.png", alt="")
+							h2.project__title FilmZone
+							p.project__description On this site I've implemented a searching for movies (analogue of Kinopoisk) using a third-party TMDB API. To handle the date, I used the moment.js library.
+							ul.project__tags-list
+								li.project__tag HTML
+								li.project__tag SCSS
+								li.project__tag JS
+								li.project__tag Fetch API
+								li.project__tag SVG Sprite
+								li.project__tag Webpack
+							.project__buttons
+								a(href="#", target="_blank", rel="noopener noreferrer").project__btn.btn-code.btn Code
+								a(href="#", target="_blank", rel="noopener noreferrer").project__btn.btn-visit.btn Visit
+						li.projects-list__item.project
+							figure.project__previews
+								.project__preview-laptop
+									img.project__img-laptop(src="images/SiteConstructor.Laptop.png", alt="SiteConstructor")
+							h2.project__title Site Constructor
+							ul.project__tags-list
+								li.project__tag HTML
+								li.project__tag SCSS
+								li.project__tag JS
+								li.project__tag Bootstrap
+								li.project__tag Webpack
+							.project__buttons
+								a(href="#", target="_blank", rel="noopener noreferrer").project__btn.btn-code.btn Code
+								a(href="#", target="_blank", rel="noopener noreferrer").project__btn.btn-visit.btn Visit			
+		footer.contacts
+			.container.contacts__container
+				h1.section-title.contacts__title Contacts
+				ul.contacts__list
+					li.contacts__contact
+						a(href="#").contacts__link
+							svg.contacts__icon
+								use(xlink:href="images/Social.spriteN.svg#linkedin")
+					li.contacts__contact
+						a(href="#").contacts__link
+							svg.contacts__icon
+								use(xlink:href="images/Social.spriteN.svg#github")
+					li.contacts__contact
+						a(href="#").contacts__link
+							svg.contacts__icon
+								use(xlink:href="images/Social.spriteN.svg#vk")
+					li.contacts__contact
+						a(href="tel:+79377956667").contacts__link
+							svg.contacts__icon
+								use(xlink:href="images/Social.spriteN.svg#phone")
+					li.contacts__contact
+						a(href="mailto:melnikov38.alex@gmail.com").contacts__link
+							svg.contacts__icon
+								use(xlink:href="images/Social.spriteN.svg#email")
+
+		script(src="index.min.js")

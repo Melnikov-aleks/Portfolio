@@ -1,0 +1,40 @@
+{
+    "name": "portfolio",
+    "version": "1.0.0",
+    "description": "my portfolio site",
+    "main": "index.js",
+    "scripts": {
+        "gulp": "gulp"
+    },
+    "keywords": [
+        "portfolio"
+    ],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@babel/core": "^7.12.9",
+        "@babel/preset-env": "^7.12.7",
+        "browser-sync": "^2.26.13",
+        "del": "^6.0.0",
+        "gulp": "^4.0.2",
+        "gulp-autoprefixer": "^7.0.1",
+        "gulp-babel": "^8.0.0",
+        "gulp-clean-css": "^4.3.0",
+        "gulp-concat": "^2.6.1",
+        "gulp-flatten": "^0.4.0",
+        "gulp-htmlmin": "^5.0.1",
+        "gulp-if": "^3.0.0",
+        "gulp-imagemin": "^7.1.0",
+        "gulp-newer": "^1.4.0",
+        "gulp-plumber": "^1.2.1",
+        "gulp-pug": "^4.0.1",
+        "gulp-sass": "^4.1.0",
+        "gulp-sourcemaps": "^3.0.0",
+        "gulp-uglify": "^3.0.2",
+        "node-sass-tilde-importer": "^1.0.2"
+    },
+    "dependencies": {
+        "@babel/polyfill": "^7.12.1",
+        "normalize.css": "^8.0.1"
+    }
+}
