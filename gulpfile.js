@@ -18,8 +18,10 @@ const htmlmin = require('gulp-htmlmin');
 const imagemin = require('gulp-imagemin');
 const newer = require('gulp-newer');
 
-const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
+const browserify = require('browserify');
+const source = require('vinyl-source-stream');
+const buffer = require('vinyl-buffer');
 
 const sync = require('browser-sync').create();
 
@@ -54,18 +56,28 @@ function styles() {
 }
 
 function scripts() {
-    return src('src/**/*.js')
+    return browserify({
+        entries: './src/js/scripts.js',
+        debug: true,
+    })
+        .transform('babelify', {
+            presets: ['@babel/env'],
+            plugins: ['@babel/transform-runtime'],
+            sourceMaps: true,
+        })
+        .bundle()
+        .pipe(source('build.js'))
+        .pipe(buffer())
         .pipe(plumber())
-        .pipe(sourcemaps.init())
+        .pipe(sourcemaps.init({ loadMaps: true }))
         .pipe(concat('index.min.js'))
-        .pipe(
-            babel({
-                presets: ['@babel/env'],
-            })
-        )
         .pipe(uglify())
         .pipe(sourcemaps.write())
         .pipe(dest('dist/'));
+}
+
+function moveJSON() {
+    return src('./*.json').pipe(dest('dist/'));
 }
 
 function images() {
@@ -109,16 +121,26 @@ function serve(cb) {
     cb();
 }
 
+function reload(cb) {
+    sync.reload();
+    cb();
+}
+
 function watching() {
-    watch('src/**/*.pug', series(html)).on('change', sync.reload);
-    watch('src/**/*.s?ss', series(styles));
-    // watch('src/**/*.s?ss', series(styles)).on('change', sync.reload);
-    watch('src/**/*.js', series(scripts)).on('change', sync.reload);
-    watch('src/img/**/*.(png|jpg|svg|gif)', series(images)).on('change', sync.reload);
+    watch('src/**/*.pug', series(html, reload));
+    watch('src/**/*.s{a,c}ss', series(styles));
+    watch('src/**/*.js', series(scripts, reload));
+    watch('./*.json', series(moveJSON, reload));
+    watch('src/img/**/*.{png|jpg|svg|gif}', series(images, reload));
 }
 
 exports.clear = clear;
 exports.delImg = delImg;
-exports.Im = images;
+exports.Im = series(delImg, images);
 exports.server = serve;
-exports.default = series(clear, parallel(html, styles, scripts, images), serve, watching);
+exports.default = series(
+    clear,
+    parallel(html, styles, scripts, images, moveJSON),
+    serve,
+    watching
+);

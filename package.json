@@ -13,12 +13,14 @@
     "license": "ISC",
     "devDependencies": {
         "@babel/core": "^7.12.9",
+        "@babel/plugin-transform-runtime": "^7.12.10",
         "@babel/preset-env": "^7.12.7",
+        "babelify": "^10.0.0",
         "browser-sync": "^2.26.13",
+        "browserify": "^17.0.0",
         "del": "^6.0.0",
         "gulp": "^4.0.2",
         "gulp-autoprefixer": "^7.0.1",
-        "gulp-babel": "^8.0.0",
         "gulp-clean-css": "^4.3.0",
         "gulp-concat": "^2.6.1",
         "gulp-flatten": "^0.4.0",
@@ -31,10 +33,13 @@
         "gulp-sass": "^4.1.0",
         "gulp-sourcemaps": "^3.0.0",
         "gulp-uglify": "^3.0.2",
-        "node-sass-tilde-importer": "^1.0.2"
+        "node-sass-tilde-importer": "^1.0.2",
+        "vinyl-buffer": "^1.0.1",
+        "vinyl-source-stream": "^2.0.0"
     },
     "dependencies": {
         "@babel/polyfill": "^7.12.1",
+        "@babel/runtime": "^7.12.5",
         "normalize.css": "^8.0.1"
     }
 }

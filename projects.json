@@ -1,0 +1,36 @@
+[
+    {
+        "name": "FilmZone",
+        "tags": ["JS"],
+        "previews": {
+            "laptop": "images/FilmZone.Laptop.png",
+            "phone": "images/FilmZone.Phone.png"
+        },
+        "time": "12.01.2020",
+        "description": "On this site I've implemented a searching for movies (analogue of Kinopoisk) using a third-party TMDB API. To handle the date, I used the moment.js library.",
+        "keywords": ["HTML", "SCSS", "JS", "Fetch API", "SVG Sprite", "Webpack"],
+        "links": { "site": "#", "repository": "#" }
+    },
+    {
+        "name": "Site Constructor",
+        "tags": ["Mockup"],
+        "previews": {
+            "laptop": "images/FilmZone.Laptop.png"
+        },
+        "time": "10-10-2020",
+        "description": "On TEST",
+        "keywords": ["HTML", "SCSS", "JS", "Gulp"],
+        "links": { "site": "#", "repository": "#" }
+    },
+    {
+        "name": "Site Constructor",
+        "tags": ["JS"],
+        "previews": {
+            "laptop": "images/SiteConstructor.Laptop.png"
+        },
+        "time": "12-23-2020",
+        "description": "",
+        "keywords": ["HTML", "SCSS", "JS", "Bootstrap", "Webpack"],
+        "links": { "site": "#", "repository": "#" }
+    }
+]

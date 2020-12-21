@@ -74,7 +74,7 @@ html(lang="en")
 									span.personal-info-item__title Date of birth: 
 									|06.08.1998
 								li.personal-info__item.personal-info-item
-									span.personal-info-item__title Place of residence: 
+									span.personal-info-item__title Residence: 
 									|Samara, Russia
 								li.personal-info__item.personal-info-item
 									span.personal-info-item__title Tel: 
@@ -85,13 +85,13 @@ html(lang="en")
 			section.projects
 				.container.projects__container
 					h1.section-title.projects__title My projects
-					ul.projects__filter-list
-						li.projects__filter-item.filter All
-						li.projects__filter-item.filter Newest
-						li.projects__filter-item.filter Pure JS
-						li.projects__filter-item.filter Mockups
+					ul.projects__filter-list.filter-list
+						li(data-filter="All").projects__filter-item.filter.filter--active All
+						li(data-filter="New").projects__filter-item.filter Newest
+						li(data-filter="JS").projects__filter-item.filter Pure JS
+						li(data-filter="Mockup").projects__filter-item.filter Mockups
 					ul.projects__list.projects-list
-						li.projects-list__item.project
+						li.projects-list__item.project(data-tag="Pure JS" data-time="01.12.2020")
 							figure.project__previews
 								.project__preview-laptop
 									img.project__img-laptop(src="images/FilmZone.Laptop.png", alt="FilmZone")
@@ -109,7 +109,7 @@ html(lang="en")
 							.project__buttons
 								a(href="#", target="_blank", rel="noopener noreferrer").project__btn.btn-code.btn Code
 								a(href="#", target="_blank", rel="noopener noreferrer").project__btn.btn-visit.btn Visit
-						li.projects-list__item.project
+						li.projects-list__item.project(data-tag="Pure JS" data-time="01.11.2020")
 							figure.project__previews
 								.project__preview-laptop
 									img.project__img-laptop(src="images/SiteConstructor.Laptop.png", alt="SiteConstructor")
