@@ -77,7 +77,7 @@ function scripts() {
 }
 
 function moveJSON() {
-    return src('./*.json').pipe(dest('dist/'));
+    return src(['./*.json', '!./*package*.json']).pipe(dest('dist/'));
 }
 
 function images() {
@@ -131,7 +131,7 @@ function watching() {
     watch('src/**/*.s{a,c}ss', series(styles));
     watch('src/**/*.js', series(scripts, reload));
     watch('./*.json', series(moveJSON, reload));
-    watch('src/img/**/*.{png|jpg|svg|gif}', series(images, reload));
+    watch('src/img/**/*.{png,jpg,svg,gif}', series(images, reload));
 }
 
 exports.clear = clear;

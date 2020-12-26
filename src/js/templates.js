@@ -3,8 +3,8 @@ export function getProjectHTML(project) {
 	<li class="projects-list__item project" data-tag="${project.tags.join(' ')}" data-time="${
         project.time
     }">
+	<h3 class="project__title">${project.name}</h3>
 		${getPreviewsHTML(project.previews, project.name)}
-		<h2 class="project__title">${project.name}</h2>
 		<p class="project__description">${project.description}</p>
 		${getKeywordsHTML(project.keywords)}
 		${getButtonsHTML(project.links)}

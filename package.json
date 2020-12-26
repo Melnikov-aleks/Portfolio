@@ -4,7 +4,8 @@
     "description": "my portfolio site",
     "main": "index.js",
     "scripts": {
-        "gulp": "gulp"
+        "gulp": "gulp",
+        "del images": "gulp delImg"
     },
     "keywords": [
         "portfolio"
