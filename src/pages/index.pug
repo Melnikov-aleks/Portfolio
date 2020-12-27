@@ -25,7 +25,7 @@ html(lang="en")
 					span.burger-line
 				nav.header__nav.navigation
 					ul.navigation__list
-						#marker
+						.marker
 						li.navigation__item
 							a.navigation__link.link-intro(href="#intro") Intro
 						li.navigation__item
@@ -52,30 +52,13 @@ html(lang="en")
 							| GitHub
 					object.intro__img(type="image/svg+xml", data="images/developer-activity-animate.svg") Your browser does not support SVGs
 				object.intro__wave(data="images/wave.svg", type="image/svg+xml")
+
 			section.about#about
 				.container.about__container
 					h2.section-title.about__title About
 					.about__content
 						img.about__avatar(src="https://dummyimage.com/600x400/000/fff", alt="avatar")
 						p.about__description My name is Alexander. I'm a junior frontend developer. I always try to learn something new, practice and improve my professional skills. That's why I want my work to contribute to my professional growth.
-						.about__personal-info.personal-info
-							h2.about__subtitle.personal-info__title Personal information
-							ul.personal-info__list
-								li.personal-info__item.personal-info-item
-									span.personal-info-item__title Full name: 
-									|Melnikov Alexander
-								li.personal-info__item.personal-info-item
-									span.personal-info-item__title Date of birth: 
-									|06.08.1998
-								li.personal-info__item.personal-info-item
-									span.personal-info-item__title Residence: 
-									|Samara, Russia
-								li.personal-info__item.personal-info-item
-									span.personal-info-item__title Tel: 
-									a(href="tel:+79377956667").personal-info-item__link +79377956667
-								li.personal-info__item.personal-info-item
-									span.personal-info-item__title Email: 
-									a(href="mailto:melnikov38.alex@gmail.com").personal-info-item__link melnikov38.alex@gmail.com
 						.about__skills.skills
 							h2.about__subtitle.skills__title My Skills
 							ul.skills__list
@@ -115,15 +98,39 @@ html(lang="en")
 									svg.skills__icon
 										use(xlink:href="images/technologies.sprite.svg#Webpack")
 									| Webpack
+						.about__personal-info.personal-info
+							h2.about__subtitle.personal-info__title Personal information
+							ul.personal-info__list
+								li.personal-info__item.personal-info-item
+									span.personal-info-item__title Full name: 
+									|Melnikov Alexander
+								li.personal-info__item.personal-info-item
+									span.personal-info-item__title Date of birth: 
+									|06.08.1998
+								li.personal-info__item.personal-info-item
+									span.personal-info-item__title Residence: 
+									|Samara, Russia
+								li.personal-info__item.personal-info-item
+									span.personal-info-item__title Tel: 
+									a(href="tel:+79377956667").personal-info-item__link +79377956667
+								li.personal-info__item.personal-info-item
+									span.personal-info-item__title Email: 
+									a(href="mailto:melnikov38.alex@gmail.com").personal-info-item__link melnikov38.alex@gmail.com
 						
 						.about__btn.btn-cv.btn Download CV
+							span.btn__border
+							span.btn__border
+							span.btn__border
+							span.btn__border
 							a(href="#" download).btn__subbtn.btn__subbtn-left doc
 							a(href="#" download).btn__subbtn.btn__subbtn-right pdf
-			section.projects#projects
+
+			section.projects
 				object.projects__wave(data="images/wave1.svg", type="image/svg+xml")
-				.container.projects__container
+				.container.projects__container#projects
 					h2.section-title.projects__title My projects
 					ul.projects__filter-list.filter-list
+						.marker
 						li(data-filter="All").projects__filter-item.filter.filter--active All
 						li(data-filter="New").projects__filter-item.filter Newest
 						li(data-filter="JS").projects__filter-item.filter Pure JS
@@ -161,6 +168,7 @@ html(lang="en")
 							.project__buttons
 								a(href="#", target="_blank", rel="noopener noreferrer").project__btn.btn-code.btn Code
 								a(href="#", target="_blank", rel="noopener noreferrer").project__btn.btn-visit.btn Visit			
+		
 		footer.contacts#contacts
 			.container.contacts__container
 				h2.section-title.contacts__title Contacts

@@ -41,7 +41,13 @@ function getButtonsHTML(links) {
     for (const key in links) {
         if (links.hasOwnProperty(key)) {
             html.push(
-                `<a class="project__btn btn-${key} btn" href="${links[key]}" target="_blank" rel="noopener noreferrer">${key}</a>`
+                `<a class="project__btn btn-${key} btn" href="${links[key]}" target="_blank" rel="noopener noreferrer">
+					<span class="btn__border"></span>
+					<span class="btn__border"></span>
+					<span class="btn__border"></span>
+					<span class="btn__border"></span>
+					${key}
+				</a>`
             );
         }
     }

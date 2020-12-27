@@ -1,4 +1,4 @@
-import { sections, projects, filterList, navigation, marker } from './constants.js';
+import { projects, filterList, navigation } from './constants.js';
 
 export function handlerBurger(e) {
     e.target.closest('.burger').classList.toggle('burger--active');
@@ -15,28 +15,40 @@ export function handlerFilter(e) {
 }
 
 export function handleMarker(e) {
-    if (!e.target.closest('.navigation__item')) return;
-    const height = e.target.closest('.navigation__item').offsetHeight;
-    const width = e.target.closest('.navigation__item').offsetWidth;
+    if (
+        !e.target.closest('li') ||
+        !e.target.closest('li').offsetParent.querySelector('.marker')
+    )
+        return;
+    const height = e.target.closest('li').offsetHeight;
+    const width = e.target.closest('li').offsetWidth;
     const bottom =
-        e.target.closest('.navigation__item').offsetParent.offsetHeight -
-        e.target.closest('.navigation__item').offsetTop -
+        e.target.closest('li').offsetParent.offsetHeight -
+        e.target.closest('li').offsetTop -
         height;
-    const left = e.target.closest('.navigation__item').offsetLeft;
-
+    const left = e.target.closest('li').offsetLeft;
+    const marker = e.target.closest('li').offsetParent.querySelector('.marker');
     marker.style.bottom = bottom + 'px';
     marker.style.left = left + 'px';
     marker.style.width = width + 'px';
     marker.style.height = height + 'px';
 }
-function controlStyckyHeader(selector, height = 0) {
-    document.querySelector(selector).nextElementSibling.getBoundingClientRect().top <=
-    height
-        ? document.querySelector('#header').classList.add('header--sticky')
-        : document.querySelector('#header').classList.remove('header--sticky');
-}
 export function handleScroll() {
     controlStyckyHeader('#intro', 30);
+    setActiveNav();
+    showAboutBlock();
+}
+function showAboutBlock() {
+    const about = document.querySelector('#about');
+    // console.log(about.offsetTop, pageYOffset);
+    console.log(
+        document.documentElement.clientHeight,
+        about.getBoundingClientRect().top * 1.2
+    );
+    if (document.documentElement.clientHeight >= about.getBoundingClientRect().top * 1.2)
+        about.classList.add('show');
+}
+function setActiveNav() {
     const headerHeight = document.querySelector('#header').getBoundingClientRect().height;
     const navLinks = navigation.querySelectorAll('.navigation__link');
     let counter = 0;
@@ -52,6 +64,13 @@ export function handleScroll() {
     if (counter > 1) {
         solveConflictActiveLinks(navigation);
     }
+}
+
+function controlStyckyHeader(selector, height = 0) {
+    document.querySelector(selector).nextElementSibling.getBoundingClientRect().top <=
+    height
+        ? document.querySelector('#header').classList.add('header--sticky')
+        : document.querySelector('#header').classList.remove('header--sticky');
 }
 function solveConflictActiveLinks(container) {
     let maxTop = 0;
