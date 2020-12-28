@@ -40,11 +40,6 @@ export function handleScroll() {
 }
 function showAboutBlock() {
     const about = document.querySelector('#about');
-    // console.log(about.offsetTop, pageYOffset);
-    console.log(
-        document.documentElement.clientHeight,
-        about.getBoundingClientRect().top * 1.2
-    );
     if (document.documentElement.clientHeight >= about.getBoundingClientRect().top * 1.2)
         about.classList.add('show');
 }
