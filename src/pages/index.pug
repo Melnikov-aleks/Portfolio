@@ -168,30 +168,41 @@ html(lang="en")
 							.project__buttons
 								a(href="#", target="_blank", rel="noopener noreferrer").project__btn.btn-code.btn Code
 								a(href="#", target="_blank", rel="noopener noreferrer").project__btn.btn-visit.btn Visit			
+			section.contacts#contacts
+				.container.contacts__container
+					h2.section-title.contacts__title Contact me
+					form(action="https://formspree.io/f/xeqpppgl" method="POST").contacts__form.form.form-feedback
+						input(type="text" name="name" placeholder="Your name").form__name.form-input
+						fieldset.form__contacts
+							input(type="email" name="_replyto" placeholder="Email").form__email.form-input
+							input(type="tel" name="phone" placeholder="Phone").form__tel.form-input
+						input(type="text" name="subject" placeholder="Subject").form__subject.form-input
+						textarea(name="message" placeholder="Message").form__message.form-input
+						input(type="submit" value="Send").form__submit.form-btn.btn
+						p.form__status
 		
-		footer.contacts#contacts
-			.container.contacts__container
-				h2.section-title.contacts__title Contacts
-				ul.contacts__list
-					li.contacts__contact
-						a(href="#").contacts__link
-							svg.contacts__icon
+		footer.footer
+			.container.footer__container
+				ul.footer__socials-list
+					li.footer__social
+						a(href="#").footer__link
+							svg.footer__icon
 								use(xlink:href="images/Social.sprite.svg#linkedin")
-					li.contacts__contact
-						a(href="#").contacts__link
-							svg.contacts__icon
+					li.footer__social
+						a(href="#").footer__link
+							svg.footer__icon
 								use(xlink:href="images/Social.sprite.svg#github")
-					li.contacts__contact
-						a(href="#").contacts__link
-							svg.contacts__icon
+					li.footer__social
+						a(href="#").footer__link
+							svg.footer__icon
 								use(xlink:href="images/Social.sprite.svg#vk")
-					li.contacts__contact
-						a(href="tel:+79377956667").contacts__link
-							svg.contacts__icon
+					li.footer__social
+						a(href="tel:+79377956667").footer__link
+							svg.footer__icon
 								use(xlink:href="images/Social.sprite.svg#phone")
-					li.contacts__contact
-						a(href="mailto:melnikov38.alex@gmail.com").contacts__link
-							svg.contacts__icon
+					li.footer__social
+						a(href="mailto:melnikov38.alex@gmail.com").footer__link
+							svg.footer__icon
 								use(xlink:href="images/Social.sprite.svg#email")
 
 		script(src="index.min.js")

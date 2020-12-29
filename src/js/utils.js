@@ -1,3 +1,12 @@
+export async function sendData(url, data) {
+    const response = await fetch(url, {
+        method: 'POST',
+        // mode: 'no-cors',
+        body: data,
+    });
+    console.log(response);
+    if (!response.ok) throw new Error(response.status);
+}
 export async function getData(url) {
     try {
         const response = await fetch(url);
@@ -5,6 +14,6 @@ export async function getData(url) {
         const data = await response.json();
         return data;
     } catch (err) {
-        return err;
+        throw err;
     }
 }

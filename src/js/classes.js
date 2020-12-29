@@ -6,14 +6,13 @@ export class Projects {
         this.wrapper = document.querySelector(selector);
     }
     async init() {
-        return getData('./projects.json')
-            .then((response) => {
-                this.data = response;
-                this.status = 'init';
-            })
-            .catch((err) => {
-                console.log(this, err);
-            });
+        try {
+            this.data = await getData('./projects.json');
+            this.status = 'init';
+        } catch (err) {
+            console.error(err);
+            this.status = err.message;
+        }
     }
     render(projects) {
         this.wrapper.innerHTML = '';
@@ -25,17 +24,12 @@ export class Projects {
     }
     async filter(filter = 'all') {
         if (this.status !== 'init') await this.init();
-        // let toRender = this.data;
-        // if (filter && filter.toUpperCase() !== 'ALL') {
-        //     toRender = this.data.filter((project) =>
-        //         project.tags.some((tag) => tag.toUpperCase() == filter.toUpperCase())
-        //     );
-        // }
+
         switch (true) {
-            case filter.toUpperCase() === 'ALL':
+            case filter.toUpperCase() === 'ALL' && this.status === 'init':
                 this.render(this.data);
                 break;
-            case filter.toUpperCase() === 'NEW':
+            case filter.toUpperCase() === 'NEW' && this.status === 'init':
                 this.render(
                     this.data
                         .slice()
@@ -44,6 +38,9 @@ export class Projects {
                         })
                         .filter((project, i) => i < 6)
                 );
+                break;
+            case this.status !== 'init':
+                this.wrapper.innerHTML = `<p class="error">Ошибка <span class="error__status">${this.status}</span>, попробуйте позже!</p>`;
                 break;
             default:
                 this.render(
@@ -55,7 +52,5 @@ export class Projects {
                 );
                 break;
         }
-        // console.log(new Date(this.data[0].time));
-        // this.render(toRender);
     }
 }

@@ -762,8 +762,61 @@ body {
 }
 
 .contacts {
+    padding: 20px 0;
+    .form {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        max-width: 500px;
+        margin: 0 auto;
+        box-sizing: border-box;
+        padding: 7px;
+        background: #f5f5f5;
+        border-radius: 5px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        @media (min-width: 575.98px) {
+            padding: 15px;
+        }
+
+        &-input {
+            // max-width: 70%;
+            min-height: 2em;
+            margin: 0 0 10px;
+            border: none;
+            border-radius: 3px;
+            resize: none;
+        }
+        &-btn {
+            margin: 0 auto;
+            border: none;
+        }
+        &__email,
+        &__tel {
+            width: 100%;
+            @media (min-width: 575.98px) {
+                width: 45%;
+            }
+        }
+        &__contacts {
+            margin: 0;
+            padding: 0;
+            border: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        &__status {
+            display: none;
+        }
+        &__message {
+            height: 5em;
+        }
+    }
+}
+
+.footer {
     background: #01192b;
-    &__list {
+    &__socials-list {
         list-style: none;
         display: flex;
         flex-wrap: nowrap;
@@ -771,7 +824,7 @@ body {
         padding: 0;
         margin: auto;
     }
-    &__contact {
+    &__social {
         width: 3rem;
         height: 3rem;
         margin: 10px;

@@ -1,5 +1,49 @@
-import { projects, filterList, navigation } from './constants.js';
+import {
+    projects,
+    filterList,
+    navigation,
+    formFeedback,
+    formButton,
+    formStatus,
+} from './constants.js';
+import { sendData } from './utils.js';
 
+export function handlerSubmit(e) {
+    e.preventDefault();
+    formButton.classList.add('disabled');
+    const data = new FormData(formFeedback);
+
+    //add validate
+    console.log('handle Form');
+    if (validateForm(data)) {
+        sendData(formFeedback.action, data)
+            .then((response) => {
+                console.log(response);
+                sendSuccess();
+            })
+            .catch((err) => {
+                console.log(err);
+                sendError('Oops. Error sending form!');
+            });
+    } else sendError('Incorrect entried data!');
+}
+function sendSuccess() {
+    console.log('success');
+    formFeedback.reset();
+    formStatus.innerHTML = 'Thanks!';
+    formStatus.classList.remove('error');
+    formStatus.classList.add('success');
+}
+function sendError(text) {
+    console.log('err');
+    formStatus.innerHTML = text;
+
+    formStatus.classList.remove('success');
+    formStatus.classList.add('error');
+}
+function validateForm(data) {
+    return true;
+}
 export function handlerBurger(e) {
     e.target.closest('.burger').classList.toggle('burger--active');
     navigation.classList.toggle('navigation--active');
