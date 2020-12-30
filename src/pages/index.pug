@@ -171,7 +171,7 @@ html(lang="en")
 			section.contacts#contacts
 				.container.contacts__container
 					h2.section-title.contacts__title Contact me
-					form(action="https://formspree.io/f/xeqpppgl" method="POST").contacts__form.form.form-feedback
+					form(action="https://formspree.io/f/xeqpppgl" method="POST" novalidate).contacts__form.form.form-feedback
 						input(type="text" name="name" placeholder="Your name").form__name.form-input
 						fieldset.form__contacts
 							input(type="email" name="_replyto" placeholder="Email").form__email.form-input
@@ -179,7 +179,6 @@ html(lang="en")
 						input(type="text" name="subject" placeholder="Subject").form__subject.form-input
 						textarea(name="message" placeholder="Message").form__message.form-input
 						input(type="submit" value="Send").form__submit.form-btn.btn
-						p.form__status
 		
 		footer.footer
 			.container.footer__container

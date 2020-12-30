@@ -1,48 +1,67 @@
-import {
-    projects,
-    filterList,
-    navigation,
-    formFeedback,
-    formButton,
-    formStatus,
-} from './constants.js';
+import { projects, filterList, navigation, emailRe, phoneRe } from './constants.js';
 import { sendData } from './utils.js';
 
 export function handlerSubmit(e) {
     e.preventDefault();
-    formButton.classList.add('disabled');
-    const data = new FormData(formFeedback);
+    e.target.classList.add('disabled');
+    const data = new FormData(e.target);
+    e.target.querySelectorAll('.form__status').forEach((elem) => elem.remove());
+    for (let key of data.keys()) {
+        e.target[key].classList.remove('form__input-error');
+    }
 
-    //add validate
-    console.log('handle Form');
-    if (validateForm(data)) {
-        sendData(formFeedback.action, data)
+    if (validateForm(e.target, data)) {
+        sendData(e.target.action, data)
             .then((response) => {
-                console.log(response);
-                sendSuccess();
+                sendSuccess(e.target);
             })
             .catch((err) => {
-                console.log(err);
-                sendError('Oops. Error sending form!');
+                sendError(e.target, 'Oops. Error sending form!');
             });
-    } else sendError('Incorrect entried data!');
+    }
+    e.target.classList.remove('disabled');
 }
-function sendSuccess() {
-    console.log('success');
-    formFeedback.reset();
-    formStatus.innerHTML = 'Thanks!';
-    formStatus.classList.remove('error');
-    formStatus.classList.add('success');
+function sendSuccess(form) {
+    form.reset();
+    form.insertAdjacentHTML(
+        'beforeend',
+        `<p class="form__status form__success">Success!</p>`
+    );
 }
-function sendError(text) {
-    console.log('err');
-    formStatus.innerHTML = text;
-
-    formStatus.classList.remove('success');
-    formStatus.classList.add('error');
+function sendError(form, text) {
+    form.insertAdjacentHTML(
+        'beforeend',
+        `<p class="form__status form__error">${text}</p>`
+    );
 }
-function validateForm(data) {
-    return true;
+function validateForm(form, formData) {
+    let error = 0;
+    if (!formData.get('name')) {
+        form['name'].classList.add('form__input-error');
+        sendError(form, 'name is required');
+        error++;
+    }
+    if (!formData.get('_replyto') && !formData.get('phone')) {
+        form['phone'].classList.add('form__input-error');
+        form['_replyto'].classList.add('form__input-error');
+        sendError(form, 'email or phone is required');
+        error++;
+    } else {
+        if (
+            formData.get('_replyto') &&
+            !emailRe.test(formData.get('_replyto').toLowerCase())
+        ) {
+            form['_replyto'].classList.add('form__input-error');
+            sendError(form, 'Incorrect email');
+            error++;
+        }
+        if (formData.get('phone') && !phoneRe.test(formData.get('phone').toLowerCase())) {
+            form['phone'].classList.add('form__input-error');
+            sendError(form, 'Incorrect phone');
+            error++;
+        }
+    }
+    return !error;
 }
 export function handlerBurger(e) {
     e.target.closest('.burger').classList.toggle('burger--active');
@@ -78,7 +97,7 @@ export function handleMarker(e) {
     marker.style.height = height + 'px';
 }
 export function handleScroll() {
-    controlStyckyHeader('#intro', 30);
+    controlStyckyHeader('#about', 30);
     setActiveNav();
     showAboutBlock();
 }
@@ -106,8 +125,7 @@ function setActiveNav() {
 }
 
 function controlStyckyHeader(selector, height = 0) {
-    document.querySelector(selector).nextElementSibling.getBoundingClientRect().top <=
-    height
+    document.querySelector(selector).getBoundingClientRect().top <= height + 1
         ? document.querySelector('#header').classList.add('header--sticky')
         : document.querySelector('#header').classList.remove('header--sticky');
 }

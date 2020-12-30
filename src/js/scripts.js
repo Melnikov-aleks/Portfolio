@@ -17,14 +17,14 @@ import {
 
 window.addEventListener('scroll', handleScroll);
 
+burger.addEventListener('click', handlerBurger);
+
 navigation.addEventListener('click', scrollToAnchor);
-navList.addEventListener('mouseover', handleMarker);
 navList.addEventListener('mouseover', handleMarker);
 
 filterList.addEventListener('click', handlerFilter);
 filterList.addEventListener('mouseover', handleMarker);
-burger.addEventListener('click', handlerBurger);
-
-projects.filter();
 
 formFeedback.addEventListener('submit', handlerSubmit);
+
+projects.filter();

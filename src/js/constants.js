@@ -8,5 +8,6 @@ export const filterList = document.querySelector('.filter-list');
 export const burger = document.querySelector('.burger');
 
 export const formFeedback = document.querySelector('.contacts__form');
-export const formButton = document.querySelector('.form__submit');
-export const formStatus = document.querySelector('.form__status');
+
+export const emailRe = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+export const phoneRe = /^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/;

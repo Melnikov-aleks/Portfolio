@@ -6,6 +6,7 @@ export async function sendData(url, data) {
     });
     console.log(response);
     if (!response.ok) throw new Error(response.status);
+    return response;
 }
 export async function getData(url) {
     try {
