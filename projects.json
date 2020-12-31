@@ -3,8 +3,8 @@
         "name": "FilmZone",
         "tags": ["JS"],
         "previews": {
-            "laptop": "images/FilmZone.Laptop.png",
-            "phone": "images/FilmZone.Phone.png"
+            "laptop": "FilmZone.Laptop.png",
+            "phone": "FilmZone.Phone.png"
         },
         "time": "12.01.2020",
         "description": "On this site I've implemented a searching for movies (analogue of Kinopoisk) using a third-party TMDB API. To handle the date, I used the moment.js library.",
@@ -15,7 +15,7 @@
         "name": "Site Constructor",
         "tags": ["Mockup"],
         "previews": {
-            "laptop": "images/FilmZone.Laptop.png"
+            "laptop": "FilmZone.Laptop.png"
         },
         "time": "10-10-2020",
         "description": "On TEST",
@@ -26,7 +26,7 @@
         "name": "Site Constructor",
         "tags": ["JS"],
         "previews": {
-            "laptop": "images/SiteConstructor.Laptop.png"
+            "laptop": "SiteConstructor.Laptop.png"
         },
         "time": "12-23-2020",
         "description": "",

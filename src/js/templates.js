@@ -1,3 +1,5 @@
+import { previewsPath } from './constants.js';
+
 export function getProjectHTML(project) {
     return `
 	<li class="projects-list__item project" data-tag="${project.tags.join(' ')}" data-time="${
@@ -17,7 +19,7 @@ function getPreviewsHTML(previews, name) {
         if (previews.hasOwnProperty(key)) {
             html.push(`
 			<div class="project__preview-${key}">
-				<img class="project__img-${key}" src="${previews[key]}" alt="${name}">
+				<img class="project__img-${key}" src="${previewsPath}${previews[key]}" alt="${name}">
 			</div>`);
         }
     }
