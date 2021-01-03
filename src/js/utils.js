@@ -1,5 +1,4 @@
 export async function sendData(url, data) {
-    console.log(JSON.stringify(Object.fromEntries(data)));
     try {
         const response = await fetch(url, {
             method: 'POST',
