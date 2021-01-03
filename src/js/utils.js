@@ -4,7 +4,6 @@ export async function sendData(url, data) {
         // mode: 'no-cors',
         body: data,
     });
-    console.log(response);
     if (!response.ok) throw new Error(response.status);
     return response;
 }

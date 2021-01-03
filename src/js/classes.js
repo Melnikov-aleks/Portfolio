@@ -7,7 +7,9 @@ export class Projects {
     }
     async init() {
         try {
-            this.data = await getData('./projects.json');
+            this.data = await getData(
+                'https://github.com/Melnikov-aleks/Portfolio/blob/master/projects.json'
+            );
             this.status = 'init';
         } catch (err) {
             console.error(err);
