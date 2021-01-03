@@ -1,11 +1,18 @@
 export async function sendData(url, data) {
-    const response = await fetch(url, {
-        method: 'POST',
-        // mode: 'no-cors',
-        body: data,
-    });
-    if (!response.ok) throw new Error(response.status);
-    return response;
+    console.log(JSON.stringify(Object.fromEntries(data)));
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(Object.fromEntries(data)),
+        });
+        if (!response.ok) throw new Error(response.status);
+        return response;
+    } catch (err) {
+        throw err;
+    }
 }
 export async function getData(url) {
     try {

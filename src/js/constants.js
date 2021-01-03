@@ -13,4 +13,4 @@ export const emailRe = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|
 export const phoneRe = /^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/;
 
 export const previewsPath =
-    'https://github.com/Melnikov-aleks/Portfolio/tree/master/previews/';
+    'https://github.com/Melnikov-aleks/Portfolio/raw/master/previews/';
