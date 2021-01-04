@@ -76,8 +76,11 @@ function scripts() {
         .pipe(dest('dist/'));
 }
 
-function moveJSON() {
-    return src(['./*.json', '!./*package*.json']).pipe(dest('dist/'));
+function moveCV() {
+    return src('CV/*').pipe(dest('dist/CV/'));
+}
+function moveFavicons() {
+    return src('src/favicons/*').pipe(dest('dist/'));
 }
 
 function images() {
@@ -130,7 +133,7 @@ function watching() {
     watch('src/**/*.pug', series(html, reload));
     watch('src/**/*.s{a,c}ss', series(styles));
     watch('src/**/*.js', series(scripts, reload));
-    watch('./*.json', series(moveJSON, reload));
+    watch('CV/*', series(moveCV, reload));
     watch('src/img/**/*.{png,jpg,svg,gif}', series(images, reload));
 }
 
@@ -140,7 +143,7 @@ exports.Im = series(delImg, images);
 exports.server = serve;
 exports.default = series(
     clear,
-    parallel(html, styles, scripts, images, moveJSON),
+    parallel(html, styles, scripts, images, moveCV, moveFavicons),
     serve,
     watching
 );

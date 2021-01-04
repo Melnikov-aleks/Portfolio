@@ -3,6 +3,13 @@ html(lang="en")
 	head
 		meta(charset="UTF-8")
 		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		link(rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png")
+		link(rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png")
+		link(rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png")
+		link(rel="manifest" href="/site.webmanifest")
+		link(rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5")
+		meta(name="msapplication-TileColor" content="#2b5797")
+		meta(name="theme-color" content="#ffffff")
 		link(rel="stylesheet", href="styles.min.css")
 		title Portfolio
 	body
@@ -57,7 +64,7 @@ html(lang="en")
 				.container.about__container
 					h2.section-title.about__title About
 					.about__content
-						img.about__avatar(src="https://dummyimage.com/600x400/000/fff", alt="avatar")
+						img.about__avatar(src="images/avatar.png", alt="avatar")
 						p.about__description My name is Alexander. I'm a junior frontend developer. I always try to learn something new, practice and improve my professional skills. That's why I want my work to contribute to my professional growth.
 						.about__skills.skills
 							h2.about__subtitle.skills__title My Skills
@@ -122,8 +129,8 @@ html(lang="en")
 							span.btn__border
 							span.btn__border
 							span.btn__border
-							a(href="https://github.com/Melnikov-aleks/Portfolio/blob/master/CV/Melnikov.Front-end.doc", target="_blank").btn__subbtn.btn__subbtn-left doc
-							a(href="https://github.com/Melnikov-aleks/Portfolio/blob/master/CV/Melnikov.Front-end.pdf", target="_blank").btn__subbtn.btn__subbtn-right pdf
+							a(href="./CV/Melnikov.Front-end.doc", target="_blank").btn__subbtn.btn__subbtn-left doc
+							a(href="./CV/Melnikov.Front-end.pdf", target="_blank").btn__subbtn.btn__subbtn-right pdf
 
 			section.projects
 				object.projects__wave(data="images/wave1.svg", type="image/svg+xml")
