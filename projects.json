@@ -12,17 +12,6 @@
         "links": { "site": "#", "repository": "#" }
     },
     {
-        "name": "Site Constructor",
-        "tags": ["Mockup"],
-        "previews": {
-            "laptop": "SiteConstructor.Laptop.png"
-        },
-        "time": "10-10-2020",
-        "description": "On TEST",
-        "keywords": ["HTML", "SCSS", "JS", "Gulp"],
-        "links": { "site": "#", "repository": "#" }
-    },
-    {
         "name": "Cinema Vue",
         "tags": ["Vue"],
         "previews": {
@@ -30,7 +19,18 @@
         },
         "time": "01-10-2021",
         "description": "Первый проект на Vue",
-        "keywords": ["HTML", "SCSS", "Vue"],
+        "keywords": ["HTML", "SCSS", "Vue", "Fetch API"],
+        "links": { "site": "#", "repository": "#" }
+    },
+    {
+        "name": "Site Constructor",
+        "tags": ["JS"],
+        "previews": {
+            "laptop": "SiteConstructor.Laptop.png"
+        },
+        "time": "10-10-2020",
+        "description": "On TEST",
+        "keywords": ["HTML", "SCSS", "JS", "Gulp"],
         "links": { "site": "#", "repository": "#" }
     }
 ]
