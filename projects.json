@@ -23,14 +23,14 @@
         "links": { "site": "#", "repository": "#" }
     },
     {
-        "name": "Site Constructor",
-        "tags": ["JS"],
+        "name": "Cinema Vue",
+        "tags": ["Vue"],
         "previews": {
-            "laptop": "SiteConstructor.Laptop.png"
+            "laptop": "CinemaVue.Laptop.png"
         },
-        "time": "12-23-2020",
-        "description": "",
-        "keywords": ["HTML", "SCSS", "JS", "Bootstrap", "Webpack"],
+        "time": "01-10-2021",
+        "description": "Первый проект на Vue",
+        "keywords": ["HTML", "SCSS", "Vue"],
         "links": { "site": "#", "repository": "#" }
     }
 ]
