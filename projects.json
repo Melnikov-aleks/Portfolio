@@ -18,8 +18,8 @@
             "laptop": "CinemaVue.Laptop.png"
         },
         "time": "01-10-2021",
-        "description": "Первый проект на Vue",
-        "keywords": ["HTML", "SCSS", "Vue", "Axios"],
+        "description": "My first site on view. Studied component basic interaction via props and emit. Used LocalStorage for data storage.",
+        "keywords": ["HTML", "SCSS", "Vue", "Axios", "LocalStorage"],
         "links": { "site": "#", "repository": "#" }
     },
     {
@@ -29,7 +29,7 @@
             "laptop": "SiteConstructor.Laptop.png"
         },
         "time": "10-10-2020",
-        "description": "On TEST",
+        "description": "The project helped in learning the classes and ES6 modules.",
         "keywords": ["HTML", "SCSS", "JS", "Gulp"],
         "links": { "site": "#", "repository": "#" }
     }
