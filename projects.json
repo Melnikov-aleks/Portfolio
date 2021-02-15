@@ -9,7 +9,7 @@
         "time": "12.01.2020",
         "description": "On this site I've implemented a searching for movies (analogue of Kinopoisk) using a third-party TMDB API. To handle the date, I used the moment.js library.",
         "keywords": ["HTML", "SCSS", "JS", "Fetch API", "SVG Sprite", "Webpack"],
-        "links": { "site": "#", "repository": "#" }
+        "links": { "site": "https://melnikov-aleks.github.io/FilmZone/", "repository": "https://github.com/Melnikov-aleks/FilmZone" }
     },
     {
         "name": "Cinema Vue",
@@ -20,7 +20,7 @@
         "time": "01-10-2021",
         "description": "My first site on view. Studied component basic interaction via props and emit. Used LocalStorage for data storage.",
         "keywords": ["HTML", "SCSS", "Vue", "Axios", "LocalStorage"],
-        "links": { "site": "#", "repository": "#" }
+        "links": { "site": "https://melnikov-aleks.github.io/cinema/", "repository": "https://github.com/Melnikov-aleks/cinema" }
     },
     {
         "name": "Site Constructor",
@@ -31,6 +31,6 @@
         "time": "10-10-2020",
         "description": "The project helped in learning the classes and ES6 modules.",
         "keywords": ["HTML", "SCSS", "JS", "Gulp"],
-        "links": { "site": "#", "repository": "#" }
+        "links": { "site": "https://melnikov-aleks.github.io/SiteConstructor/", "repository": "https://github.com/Melnikov-aleks/SiteConstructor" }
     }
 ]
