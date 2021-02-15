@@ -19,7 +19,7 @@
         },
         "time": "01-10-2021",
         "description": "Первый проект на Vue",
-        "keywords": ["HTML", "SCSS", "Vue", "Fetch API"],
+        "keywords": ["HTML", "SCSS", "Vue", "Axios"],
         "links": { "site": "#", "repository": "#" }
     },
     {
