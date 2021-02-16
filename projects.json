@@ -18,7 +18,7 @@
             "laptop": "CinemaVue.Laptop.png"
         },
         "time": "01-10-2021",
-        "description": "My first site on view. Studied component basic interaction via props and emit. Used LocalStorage for data storage.",
+        "description": "My first site on Vue. Studied component basic interaction via props and emit. Used LocalStorage for data storage.",
         "keywords": ["HTML", "SCSS", "Vue", "Axios", "LocalStorage"],
         "links": { "site": "https://melnikov-aleks.github.io/cinema/", "repository": "https://github.com/Melnikov-aleks/cinema" }
     },
