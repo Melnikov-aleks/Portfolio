@@ -5,7 +5,7 @@
         "previews": {
             "laptop": "VueShop.Laptop.png"
         },
-        "time": "03.10.2020",
+        "time": "03.10.2021",
         "description": "To learn vuex, vue router I implemented this prototype of an online shop. Firebase REST API is used for authorization and interaction with the database.",
         "keywords": ["Vue", "Vuex", "Vue Router", "Axios", "Firebase", "Auth"],
         "links": { "site": "https://vue-store-ad75d.web.app/", "repository": "https://github.com/Melnikov-aleks/vue-shop" }
